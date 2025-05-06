@@ -14,9 +14,15 @@
             font-size: 1.5rem;
         }
         .footer {
-            margin-top: 50px;
             padding: 20px 0;
             background-color: #f8f9fa;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        body {
+            padding-bottom: 250px; /* Add padding to prevent content from being hidden behind footer */
         }
         .product-card {
             height: 100%;
@@ -26,10 +32,14 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
+        /* Custom larger margin class */
+        .mb-custom {
+            margin-bottom: 3rem !important; /* Larger than mb-5 (which is 3rem in Bootstrap 5) */
+        }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5 mb-custom">
         <div class="container">
             <a class="navbar-brand" href="{{ route('home') }}">ShopX</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -102,12 +112,15 @@
         @yield('content')
     </main>
 
-    <footer class="footer mt-auto">
+    <footer class="footer mt-auto pb-0">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
                     <h5>ShopX</h5>
-                    <p>Your trusted electronics store.</p>
+                    <p>UTS 2 - Keamanan Jaringan.</p>
+                    <p>Anggota Kelompok:</p>
+                    <p> - 152023057_Fathurrahman Pratama Putra </p>
+                    <p> - 152023151_Tedy Sukma Permana</p>
                 </div>
                 <div class="col-md-4">
                     <h5>Quick Links</h5>
@@ -120,8 +133,8 @@
                 <div class="col-md-4">
                     <h5>Contact Us</h5>
                     <address>
-                        <p><i class="fas fa-map-marker-alt"></i> 123 Electronics Street, Tech City</p>
-                        <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                        <p><i class="fas fa-map-marker-alt"></i> FTI Informatika ,Itenas</p>
+                        <p><i class="fas fa-phone"></i> +62 859 2633 221</p>
                         <p><i class="fas fa-envelope"></i> info@shopx.com</p>
                     </address>
                 </div>
