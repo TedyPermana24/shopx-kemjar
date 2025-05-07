@@ -24,12 +24,13 @@
                             <td>
                                 <div class="d-flex align-items-center">
                                     @if (isset($item['image']))
-                                        <img src="{{ asset('storage/' . $item['image']) }}" alt="{{ $item['name'] }}"
+                                        <img src="{{ $item['image'] }}" alt="{{ $item['name'] }}"
                                             class="img-thumbnail me-3" style="width: 80px;">
                                     @else
                                         <img src="https://via.placeholder.com/80?text=No+Image" alt="No Image"
                                             class="img-thumbnail me-3" style="width: 80px;">
                                     @endif
+
                                     <div>
                                         <h5 class="mb-0">{{ $item['name'] }}</h5>
                                     </div>

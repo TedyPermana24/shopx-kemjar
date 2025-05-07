@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Services;
+use RuntimeException;
+
 
 class EncryptionService
 {
@@ -9,9 +11,22 @@ class EncryptionService
 
     public function __construct()
     {
-        // In a production environment, this key should be stored in a secure KMS
-        // For this example, we'll use the Laravel app key
-        $this->encryptionKey = substr(config('app.key'), 7);
+        // Path ke file kunci di OneDrive
+        $keyPath = 'C:\Users\ppfat\OneDrive\KEY KEMJAR\key.txt';
+
+        if (!file_exists($keyPath)) {
+            throw new RuntimeException("Encryption key file not found at: $keyPath");
+        }
+
+        $key = trim(file_get_contents($keyPath));
+
+        if (strlen($key) < 32) {
+            throw new RuntimeException("Encryption key must be at least 32 characters for AES-256.");
+        }
+
+        // Simpan 32 karakter pertama sebagai kunci (AES-256 butuh 32-byte key)
+        $this->encryptionKey = substr($key, 0, 32);
+       
     }
 
     public function encrypt(string $data): string

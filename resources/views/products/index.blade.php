@@ -44,7 +44,7 @@
                     <div class="col-md-4 mb-4">
                         <div class="card product-card">
                             @if($product->image)
-                                <img src="{{ asset('storage/' . $product->image) }}" class="card-img-top" alt="{{ $product->name }}">
+                                <img src="{{ $product->image }}" class="card-img-top" alt="{{ $product->name }}">
                             @else
                                 <img src="https://via.placeholder.com/300x200?text=No+Image" class="card-img-top" alt="No Image">
                             @endif

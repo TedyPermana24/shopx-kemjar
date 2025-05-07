@@ -16,13 +16,17 @@
         .footer {
             padding: 20px 0;
             background-color: #f8f9fa;
-            position: fixed;
-            bottom: 0;
+            position: relative;
+            margin-top: 50px;
             width: 100%;
-            z-index: 1000;
         }
         body {
-            padding-bottom: 250px; /* Add padding to prevent content from being hidden behind footer */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        main {
+            flex: 1;
         }
         .product-card {
             height: 100%;
@@ -117,10 +121,11 @@
             <div class="row">
                 <div class="col-md-4">
                     <h5>ShopX</h5>
-                    <p>UTS 2 - Keamanan Jaringan.</p>
-                    <p>Anggota Kelompok:</p>
-                    <p> - 152023057_Fathurrahman Pratama Putra </p>
-                    <p> - 152023151_Tedy Sukma Permana</p>
+                    <p class="md-1">UTS 2 - Keamanan Jaringan.</p>
+                    <p class="md-1">Anggota Kelompok:</p>
+                    <p class="md-1"> - 152023057_Fathurrahman Pratama Putra </p>
+                    <p class="md-1"> - 152023151_Tedy Sukma Permana</p>
+                    <p class="md-1"> - 152023124_Muhammad Fariz Alfaritzi</p>
                 </div>
                 <div class="col-md-4">
                     <h5>Quick Links</h5>
